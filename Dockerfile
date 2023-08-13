@@ -1,5 +1,17 @@
 FROM maven:3.9.3-amazoncorretto-8
 
+ARG VERSION
+ARG BUILD_DATE
+ARG REVISION
+
+LABEL "org.opencontainers.image.authors"="savik.ne@gmail.com"
+LABEL "org.opencontainers.image.created"="${BUILD_DATE}"
+LABEL "org.opencontainers.image.version"="${VERSION}"
+LABEL "org.opencontainers.image.revision"="${REVISION}"
+LABEL "org.opencontainers.image.title"="docker-mvn-npm"
+LABEL "org.opencontainers.image.description"="A container that can be used to build apps with Maven and NodeJS"
+LABEL "org.opencontainers.image.documentation"="This image is intended to be as CI pipelines build container"
+
 RUN yum update -y && \
     yum clean all
 
