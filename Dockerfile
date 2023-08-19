@@ -13,6 +13,7 @@ LABEL "org.opencontainers.image.description"="A container that can be used to bu
 LABEL "org.opencontainers.image.documentation"="This image is intended to be as CI pipelines build container"
 
 RUN yum update -y && \
+    yum install git -y \
     yum clean all
 
 ENV NODE_VERSION 14.21.3
