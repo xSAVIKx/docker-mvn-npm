@@ -13,5 +13,4 @@ docker build -f "${DOCKERFILE}" \
   --tag "${IMAGE_NAME}:${VERSION}-${GIT_SHA}" \
   --tag "${IMAGE_NAME}:${VERSION}-${SHORT_SHA}" \
   --tag "${IMAGE_NAME}:${VERSION}" \
-  --tag "${IMAGE_NAME}:${VERSION}-latest" \
   .
