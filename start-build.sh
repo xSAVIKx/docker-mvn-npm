@@ -10,8 +10,8 @@ docker build -f "${DOCKERFILE}" \
   --build-arg "BUILD_DATE=${BUILD_DATE}" \
   --build-arg "REVISION=${GIT_SHA}" \
   --build-arg "VERSION=${VERSION}" \
-  --tag "${IMAGE_NAME}:${GIT_SHA}" \
-  --tag "${IMAGE_NAME}:${SHORT_SHA}" \
+  --tag "${IMAGE_NAME}:${VERSION}-${GIT_SHA}" \
+  --tag "${IMAGE_NAME}:${VERSION}-${SHORT_SHA}" \
   --tag "${IMAGE_NAME}:${VERSION}" \
-  --tag "${IMAGE_NAME}:latest" \
+  --tag "${IMAGE_NAME}:${VERSION}-latest" \
   .
