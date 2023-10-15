@@ -1,4 +1,4 @@
-FROM maven:3.9.3-amazoncorretto-8
+FROM maven:3.9.4-amazoncorretto-8
 
 ARG VERSION
 ARG BUILD_DATE
@@ -17,7 +17,7 @@ RUN yum update -y && \
     yum clean all
 
 ENV NODE_VERSION 14.21.3
-ENV NVM_VERSION 0.39.4
+ENV NVM_VERSION 0.39.5
 
 RUN curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh" | bash && \
     . ~/.nvm/nvm.sh && \
