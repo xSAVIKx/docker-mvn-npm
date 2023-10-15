@@ -23,7 +23,6 @@ RUN curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/insta
     . ~/.nvm/nvm.sh && \
     nvm install "${NODE_VERSION}" && \
     nvm alias "default" "${NODE_VERSION}" && \
-    nvm use "default" && \
-    npm i npm@latest --global
+    nvm use "default"
 
 ENV PATH "/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
