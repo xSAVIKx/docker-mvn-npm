@@ -1,4 +1,4 @@
-FROM maven:3.9.4-amazoncorretto-8
+FROM maven:3.9.5-amazoncorretto-8-al2023
 
 ARG VERSION
 ARG BUILD_DATE
@@ -12,9 +12,9 @@ LABEL "org.opencontainers.image.title"="docker-mvn-npm"
 LABEL "org.opencontainers.image.description"="A container that can be used to build apps with Maven and NodeJS"
 LABEL "org.opencontainers.image.documentation"="This image is intended to be as CI pipelines build container"
 
-RUN yum update -y && \
-    yum install git -y \
-    yum clean all
+RUN dnf -y update \
+    && dnf install git -y \
+    && dnf clean all
 
 ENV NODE_VERSION 18.18.2
 ENV NVM_VERSION 0.39.5
