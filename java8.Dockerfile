@@ -16,7 +16,7 @@ RUN dnf -y update \
     && dnf install git -y \
     && dnf clean all
 
-ENV NODE_VERSION 18.18.2
+ENV NODE_VERSION 20.9.0
 ENV NVM_VERSION 0.39.5
 
 RUN curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh" | bash && \
