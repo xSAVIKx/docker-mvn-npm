@@ -1,4 +1,4 @@
-FROM maven:3.9.8-amazoncorretto-8-al2023
+FROM maven:3.9.9-amazoncorretto-8-al2023
 
 ARG VERSION
 ARG BUILD_DATE
