@@ -13,7 +13,7 @@ LABEL "org.opencontainers.image.description"="A container that can be used to bu
 LABEL "org.opencontainers.image.documentation"="This image is intended to be as CI pipelines build container"
 
 RUN dnf -y update \
-    && dnf install git make automake gcc gcc-c++ jq wget curl -y \
+    && dnf install git make automake gcc gcc-c++ jq wget -y \
     && dnf clean all
 
 ENV NODE_VERSION=20.19.6
