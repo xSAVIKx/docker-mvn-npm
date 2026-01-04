@@ -1,4 +1,4 @@
-FROM maven:3.9.9-amazoncorretto-8-al2023
+FROM maven:3.9.12-amazoncorretto-8-al2023
 
 ARG VERSION
 ARG BUILD_DATE
@@ -13,11 +13,11 @@ LABEL "org.opencontainers.image.description"="A container that can be used to bu
 LABEL "org.opencontainers.image.documentation"="This image is intended to be as CI pipelines build container"
 
 RUN dnf -y update \
-    && dnf install git make automake gcc gcc-c++ -y \
+    && dnf install git make automake gcc gcc-c++ jq wget curl -y \
     && dnf clean all
 
-ENV NODE_VERSION=20.15.1
-ENV NVM_VERSION=0.40.1
+ENV NODE_VERSION=20.19.6
+ENV NVM_VERSION=0.40.3
 
 RUN curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh" | bash && \
     . ~/.nvm/nvm.sh && \
