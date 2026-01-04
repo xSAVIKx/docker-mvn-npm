@@ -16,7 +16,7 @@ RUN dnf -y update \
     && dnf install git make automake gcc gcc-c++ jq wget -y \
     && dnf clean all
 
-ENV NODE_VERSION=20.19.6
+ENV NODE_VERSION=24.12.0
 ENV NVM_VERSION=0.40.3
 
 RUN curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh" | bash && \
