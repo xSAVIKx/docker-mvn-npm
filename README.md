@@ -12,6 +12,7 @@ Docker Hub: https://hub.docker.com/r/xsavikx/docker-mvn-npm
 | `java8-mvn3-node24`  | Amazon Corretto 8  | 3.9.14 | 24.15.0 |
 | `java11-mvn3-node24` | Amazon Corretto 11 | 3.9.14 | 24.15.0 |
 | `java17-mvn3-node24` | Amazon Corretto 17 | 3.9.14 | 24.15.0 |
+| `java21-mvn3-node24` | Amazon Corretto 21 | 3.9.14 | 24.15.0 |
 
 Each image is also tagged with the full and short Git SHA at build time:
 `xsavikx/docker-mvn-npm:<VERSION>-<GIT_SHA>`

@@ -24,7 +24,7 @@ Each build script sets `VERSION` and `DOCKERFILE` env vars, then calls `start-bu
 
 ## Architecture
 
-Three parallel Dockerfiles (`java8.Dockerfile`, `java11.Dockerfile`, `java17.Dockerfile`) follow an identical pattern:
+Four parallel Dockerfiles (`java8.Dockerfile`, `java11.Dockerfile`, `java17.Dockerfile`, `java21.Dockerfile`) follow an identical pattern:
 
 1. Base: `maven:3.9.12-amazoncorretto-<JAVA>-al2023`
 2. Install via `dnf`: `git make automake gcc gcc-c++ jq wget` (clean cache after)
