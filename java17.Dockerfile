@@ -1,11 +1,11 @@
-FROM maven:3.9.12-amazoncorretto-17-al2023
+FROM maven:3.9.14-amazoncorretto-17-al2023
 
 RUN dnf -y update \
     && dnf install git make automake gcc gcc-c++ jq wget -y \
     && dnf clean all
 
-ENV NODE_VERSION=24.12.0
-ENV NVM_VERSION=0.40.3
+ENV NODE_VERSION=24.15.0
+ENV NVM_VERSION=0.40.4
 
 RUN curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh" | bash && \
     . ~/.nvm/nvm.sh && \
