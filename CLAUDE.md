@@ -42,7 +42,7 @@ When updating tool versions, change `ENV NODE_VERSION` / `ENV NVM_VERSION` and t
 
 | Variable | Current Value | Location |
 |---|---|---|
-| Maven version | 3.9.12 | Dockerfile `FROM` lines |
-| Node.js version | 24.12.0 | `NODE_VERSION` ARG |
-| NVM version | 0.40.3 | `NVM_VERSION` ARG |
+| Maven version | 3.9.14 | Dockerfile `FROM` lines |
+| Node.js version | 24.15.0 | `NODE_VERSION` ENV |
+| NVM version | 0.40.4 | `NVM_VERSION` ENV |
 | Docker Hub repo | `xsavikx/docker-mvn-npm` | `start-build.sh` |
