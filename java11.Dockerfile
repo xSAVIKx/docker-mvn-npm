@@ -1,11 +1,11 @@
-FROM maven:3.9.14-amazoncorretto-11-al2023
+FROM maven:3.9.16-amazoncorretto-11-al2023
 
 RUN dnf -y update \
     && dnf install git make automake gcc gcc-c++ jq wget -y \
     && dnf clean all
 
-ENV NODE_VERSION=24.15.0
-ENV NVM_VERSION=0.40.4
+ENV NODE_VERSION=24.20.0
+ENV NVM_VERSION=0.40.7
 
 RUN curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh" | bash && \
     . ~/.nvm/nvm.sh && \
@@ -19,7 +19,7 @@ ARG VERSION
 ARG BUILD_DATE
 ARG REVISION
 
-LABEL "org.opencontainers.image.authors"="savik.ne@gmail.com"
+LABEL "org.opencontainers.image.authors"="yurii@serhiichuk.dev"
 LABEL "org.opencontainers.image.created"="${BUILD_DATE}"
 LABEL "org.opencontainers.image.version"="${VERSION}"
 LABEL "org.opencontainers.image.revision"="${REVISION}"

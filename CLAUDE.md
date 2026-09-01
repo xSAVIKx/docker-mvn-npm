@@ -9,13 +9,14 @@ This repository builds Docker images that combine official Maven images with LTS
 ## Build Commands
 
 ```bash
-# Build all three Java variant images
+# Build all four Java variant images
 ./build-all.sh
 
 # Build individual variants
 ./start-build.java8.sh
 ./start-build.java11.sh
 ./start-build.java17.sh
+./start-build.java21.sh
 ```
 
 Each build script sets `VERSION` and `DOCKERFILE` env vars, then calls `start-build.sh`, which:
@@ -26,7 +27,7 @@ Each build script sets `VERSION` and `DOCKERFILE` env vars, then calls `start-bu
 
 Four parallel Dockerfiles (`java8.Dockerfile`, `java11.Dockerfile`, `java17.Dockerfile`, `java21.Dockerfile`) follow an identical pattern:
 
-1. Base: `maven:3.9.12-amazoncorretto-<JAVA>-al2023`
+1. Base: `maven:3.9.16-amazoncorretto-<JAVA>-al2023`
 2. Install via `dnf`: `git make automake gcc gcc-c++ jq wget` (clean cache after)
 3. Install NVM then Node.js `NODE_VERSION` via NVM
 4. Set `PATH` to include NVM's Node.js bin directory
@@ -36,13 +37,13 @@ Four parallel Dockerfiles (`java8.Dockerfile`, `java11.Dockerfile`, `java17.Dock
 
 Image tags follow the pattern: `java<N>-mvn3-node<MAJOR>` (e.g., `java17-mvn3-node24`).
 
-When updating tool versions, change `ENV NODE_VERSION` / `ENV NVM_VERSION` and the Maven base image tag consistently across **all three Dockerfiles** and the corresponding build scripts. `ARG` is only used for OCI label metadata (`VERSION`, `BUILD_DATE`, `REVISION`).
+When updating tool versions, change `ENV NODE_VERSION` / `ENV NVM_VERSION` and the Maven base image tag consistently across **all four Dockerfiles** and the corresponding build scripts. `ARG` is only used for OCI label metadata (`VERSION`, `BUILD_DATE`, `REVISION`).
 
 ## Key Variables
 
 | Variable | Current Value | Location |
 |---|---|---|
-| Maven version | 3.9.14 | Dockerfile `FROM` lines |
-| Node.js version | 24.15.0 | `NODE_VERSION` ENV |
-| NVM version | 0.40.4 | `NVM_VERSION` ENV |
+| Maven version | 3.9.16 | Dockerfile `FROM` lines |
+| Node.js version | 24.20.0 | `NODE_VERSION` ENV |
+| NVM version | 0.40.7 | `NVM_VERSION` ENV |
 | Docker Hub repo | `xsavikx/docker-mvn-npm` | `start-build.sh` |
